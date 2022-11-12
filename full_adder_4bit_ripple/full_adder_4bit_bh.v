@@ -2,7 +2,7 @@
     4 Bit Full ripple adder (Behavioural)
 ********************************************/
 
-module full_adder_4bit_ripple(
+module full_adder_4bit_bh(
     s,co,a,b,ci
 );
 

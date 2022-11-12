@@ -2,7 +2,7 @@
     4 Bit Full ripple adder (Data flow)
 ********************************************/
 
-module full_adder_4bit_ripple(
+module full_adder_4bit_df(
     s,co,a,b,ci
 );
 
