@@ -1,0 +1,37 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7feff2a04c00 .scope module, "encode_4_2_df" "encode_4_2_df" 2 5;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 2 "Y";
+    .port_info 1 /INPUT 1 "V";
+    .port_info 2 /INPUT 4 "I";
+L_0x7feff2b0f250 .functor OR 1, L_0x7feff2b0f0b0, L_0x7feff2b0f170, C4<0>, C4<0>;
+L_0x7feff2b0f540 .functor OR 1, L_0x7feff2b0f360, L_0x7feff2b0f400, C4<0>, C4<0>;
+o0x7feff2932008 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x7feff2a08050_0 .net "I", 3 0, o0x7feff2932008;  0 drivers
+v0x7feff2b0ea30_0 .net "V", 0 0, L_0x7feff2b0f780;  1 drivers
+v0x7feff2b0eae0_0 .net "Y", 1 0, L_0x7feff2b0f630;  1 drivers
+v0x7feff2b0eba0_0 .net *"_ivl_1", 0 0, L_0x7feff2b0f0b0;  1 drivers
+v0x7feff2b0ec50_0 .net *"_ivl_10", 0 0, L_0x7feff2b0f540;  1 drivers
+v0x7feff2b0ed40_0 .net *"_ivl_3", 0 0, L_0x7feff2b0f170;  1 drivers
+v0x7feff2b0edf0_0 .net *"_ivl_4", 0 0, L_0x7feff2b0f250;  1 drivers
+v0x7feff2b0eea0_0 .net *"_ivl_7", 0 0, L_0x7feff2b0f360;  1 drivers
+v0x7feff2b0ef50_0 .net *"_ivl_9", 0 0, L_0x7feff2b0f400;  1 drivers
+L_0x7feff2b0f0b0 .part o0x7feff2932008, 1, 1;
+L_0x7feff2b0f170 .part o0x7feff2932008, 0, 1;
+L_0x7feff2b0f360 .part o0x7feff2932008, 2, 1;
+L_0x7feff2b0f400 .part o0x7feff2932008, 0, 1;
+L_0x7feff2b0f630 .concat [ 1 1 0 0], L_0x7feff2b0f540, L_0x7feff2b0f250;
+L_0x7feff2b0f780 .reduce/or o0x7feff2932008;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "encode_4_2_df.v";
