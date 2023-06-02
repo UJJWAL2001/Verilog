@@ -2,7 +2,7 @@
     10 to 40 up/down counter
 **************************/
 
-module counter_10_to_40 (count, clk, data, load, u_d, rst);
+module counter_10to40_up_down (count, clk, data, load, u_d, rst);
 input [7:0]data;
 input clk, load, u_d, rst;
 output [7:0]count;
