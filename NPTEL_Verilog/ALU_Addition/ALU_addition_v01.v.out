@@ -1,0 +1,76 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7f7e6e304580 .scope module, "ALU_addition" "ALU_addition" 2 3;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "X";
+    .port_info 1 /INPUT 16 "Y";
+    .port_info 2 /OUTPUT 16 "Z";
+    .port_info 3 /OUTPUT 1 "Sign";
+    .port_info 4 /OUTPUT 1 "Zero";
+    .port_info 5 /OUTPUT 1 "Carry";
+    .port_info 6 /OUTPUT 1 "Parity";
+    .port_info 7 /OUTPUT 1 "Overflow";
+L_0x7f7e6e319aa0 .functor AND 1, L_0x7f7e6e319910, L_0x7f7e6e319a00, C4<1>, C4<1>;
+L_0x7f7e6e319c90 .functor NOT 1, L_0x7f7e6e319b90, C4<0>, C4<0>, C4<0>;
+L_0x7f7e6e319d00 .functor AND 1, L_0x7f7e6e319aa0, L_0x7f7e6e319c90, C4<1>, C4<1>;
+L_0x7f7e6e319e90 .functor NOT 1, L_0x7f7e6e319df0, C4<0>, C4<0>, C4<0>;
+L_0x7f7e6e31a050 .functor NOT 1, L_0x7f7e6e319f40, C4<0>, C4<0>, C4<0>;
+L_0x7f7e6e31a110 .functor AND 1, L_0x7f7e6e319e90, L_0x7f7e6e31a050, C4<1>, C4<1>;
+L_0x7f7e6e31a2a0 .functor AND 1, L_0x7f7e6e31a110, L_0x7f7e6e31a200, C4<1>, C4<1>;
+L_0x7f7e6e31a3d0 .functor OR 1, L_0x7f7e6e319d00, L_0x7f7e6e31a2a0, C4<0>, C4<0>;
+v0x7f7e6e3046f0_0 .net "Carry", 0 0, L_0x7f7e6e319100;  1 drivers
+v0x7f7e6e317e00_0 .net "Overflow", 0 0, L_0x7f7e6e31a3d0;  1 drivers
+v0x7f7e6e317ea0_0 .net "Parity", 0 0, L_0x7f7e6e3197f0;  1 drivers
+v0x7f7e6e317f30_0 .net "Sign", 0 0, L_0x7f7e6e319630;  1 drivers
+o0x7f7e6e0320c8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x7f7e6e317fd0_0 .net "X", 15 0, o0x7f7e6e0320c8;  0 drivers
+o0x7f7e6e0320f8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x7f7e6e3180c0_0 .net "Y", 15 0, o0x7f7e6e0320f8;  0 drivers
+v0x7f7e6e318170_0 .net "Z", 15 0, L_0x7f7e6e3191a0;  1 drivers
+v0x7f7e6e318220_0 .net "Zero", 0 0, L_0x7f7e6e319710;  1 drivers
+L_0x7f7e6e063050 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7f7e6e3182c0_0 .net *"_ivl_10", 0 0, L_0x7f7e6e063050;  1 drivers
+v0x7f7e6e3183d0_0 .net *"_ivl_11", 16 0, L_0x7f7e6e3194c0;  1 drivers
+v0x7f7e6e318480_0 .net *"_ivl_20", 0 0, L_0x7f7e6e319910;  1 drivers
+v0x7f7e6e318530_0 .net *"_ivl_22", 0 0, L_0x7f7e6e319a00;  1 drivers
+v0x7f7e6e3185e0_0 .net *"_ivl_23", 0 0, L_0x7f7e6e319aa0;  1 drivers
+v0x7f7e6e318690_0 .net *"_ivl_26", 0 0, L_0x7f7e6e319b90;  1 drivers
+v0x7f7e6e318740_0 .net *"_ivl_27", 0 0, L_0x7f7e6e319c90;  1 drivers
+v0x7f7e6e3187f0_0 .net *"_ivl_29", 0 0, L_0x7f7e6e319d00;  1 drivers
+v0x7f7e6e3188a0_0 .net *"_ivl_3", 16 0, L_0x7f7e6e319240;  1 drivers
+v0x7f7e6e318a30_0 .net *"_ivl_32", 0 0, L_0x7f7e6e319df0;  1 drivers
+v0x7f7e6e318ac0_0 .net *"_ivl_33", 0 0, L_0x7f7e6e319e90;  1 drivers
+v0x7f7e6e318b70_0 .net *"_ivl_36", 0 0, L_0x7f7e6e319f40;  1 drivers
+v0x7f7e6e318c20_0 .net *"_ivl_37", 0 0, L_0x7f7e6e31a050;  1 drivers
+v0x7f7e6e318cd0_0 .net *"_ivl_39", 0 0, L_0x7f7e6e31a110;  1 drivers
+v0x7f7e6e318d80_0 .net *"_ivl_42", 0 0, L_0x7f7e6e31a200;  1 drivers
+v0x7f7e6e318e30_0 .net *"_ivl_43", 0 0, L_0x7f7e6e31a2a0;  1 drivers
+L_0x7f7e6e063008 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7f7e6e318ee0_0 .net *"_ivl_6", 0 0, L_0x7f7e6e063008;  1 drivers
+v0x7f7e6e318f90_0 .net *"_ivl_7", 16 0, L_0x7f7e6e319380;  1 drivers
+L_0x7f7e6e319100 .part L_0x7f7e6e3194c0, 16, 1;
+L_0x7f7e6e3191a0 .part L_0x7f7e6e3194c0, 0, 16;
+L_0x7f7e6e319240 .concat [ 16 1 0 0], o0x7f7e6e0320c8, L_0x7f7e6e063008;
+L_0x7f7e6e319380 .concat [ 16 1 0 0], o0x7f7e6e0320f8, L_0x7f7e6e063050;
+L_0x7f7e6e3194c0 .arith/sum 17, L_0x7f7e6e319240, L_0x7f7e6e319380;
+L_0x7f7e6e319630 .part L_0x7f7e6e3191a0, 15, 1;
+L_0x7f7e6e319710 .reduce/nor L_0x7f7e6e3191a0;
+L_0x7f7e6e3197f0 .reduce/xnor L_0x7f7e6e3191a0;
+L_0x7f7e6e319910 .part o0x7f7e6e0320c8, 15, 1;
+L_0x7f7e6e319a00 .part o0x7f7e6e0320f8, 15, 1;
+L_0x7f7e6e319b90 .part L_0x7f7e6e3191a0, 15, 1;
+L_0x7f7e6e319df0 .part o0x7f7e6e0320c8, 15, 1;
+L_0x7f7e6e319f40 .part o0x7f7e6e0320f8, 15, 1;
+L_0x7f7e6e31a200 .part L_0x7f7e6e3191a0, 15, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "ALU_addition_v01.v";
